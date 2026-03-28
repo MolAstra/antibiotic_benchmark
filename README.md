@@ -25,6 +25,7 @@ pip install "git+https://github.com/zhaisilong/dpnet.git"
 
 # install antibio_bench package
 pip install -e .
+# matplotlib is installed automatically via pyproject dependencies
 
 # optional: keep submodules updated after pull
 # git pull --recurse-submodules
@@ -40,10 +41,10 @@ python 0_data_preparation.py
 
 ## Data Spliting
 
-## Model Compling
+## Modeling
 
-## Evluations
+## Evaluations
 
-## Plots
+## Notebooks
 
-## Reference
+## Citations

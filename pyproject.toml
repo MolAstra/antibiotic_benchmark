@@ -4,10 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "antibiotic-benchmark"
-version = "0.0.2"
+version = "0.1.0"
 description = "Simple benchmarking package for antibiotic prediction tasks"
 readme = "README.md"
 requires-python = ">=3.9"
+dependencies = [
+  "matplotlib>=3.8",
+]
 authors = [
   { name = "antibiotic_benchmark contributors" }
 ]
@@ -15,4 +18,3 @@ authors = [
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["antibio_bench*"]
-

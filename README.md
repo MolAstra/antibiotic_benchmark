@@ -34,22 +34,46 @@ pip install -e .
 
 ## Data Preparation and Standardization
 
-```bash
-# open notebook
-jupyter lab 0_data_preparation.ipynb
-
-# optional: run notebook headless
-# jupyter nbconvert --to notebook --execute 0_data_preparation.ipynb --output 0_data_preparation.executed.ipynb
-```
-
 `0_data_preparation.ipynb` prepares and standardizes the input table, then exports genus-level datasets used by downstream DPNet split and modeling scripts.
 
-## Data Spliting
+## Data Splitting (DPNet)
+
+Use `1_run_dpnet.sh` to build per-genus DPNet tasks and run DPNet scaffold splitting.
+
+- Input: `datasets/genus_top15/*.csv`
+- DPNet task root: `datasets/dpnet_db/<genus>/`
+- Split output: `datasets/dpnet_db/<genus>/processed/<genus>/{train,valid,test}.csv`
+- Ratio summary output: `datasets/data_pos_ratio.csv`
+
+```bash
+bash 1_run_dpnet.sh
+```
 
 ## Modeling
 
+`run_ml_single.py` / `run_ml_single.sh` train one model for one dataset + one cutoff using pre-split DPNet files (`train/valid/test`).
+
+`run_ml_batch.sh` runs batch experiments across all processed datasets, model list, and cutoff list.
+
+- Models: `svm`, `rf`, `lightgbm`, `xgb`
+- Output: `resutls/<data_name>/<model>_<cut_off>.csv`
+- Existing result file policy: print `WARN` and skip
+
+```bash
+# single
+bash run_ml_single.sh Acinetobacter 32 rf
+
+# batch
+bash run_ml_batch.sh
+```
+
 ## Evaluations
 
+We will add a dedicated results-analysis script to summarize model outputs under `resutls/`.
+
 ## Notebooks
+
+- `notebooks/cutoff.ipynb`: visualize `datasets/data_pos_ratio.csv`
+- `notebooks/results_plots.ipynb`: visualize and compare model outputs from `resutls/*/*.csv`
 
 ## Citations

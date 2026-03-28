@@ -29,3 +29,10 @@
 - Added and tracked `0_data_preparation.ipynb` in repository.
 - Updated README data preparation section to use notebook workflow.
 - Added `resutls/` to `.gitignore` as local model output directory.
+- Updated README workflow notes:
+  - Clarified role of `0_data_preparation.ipynb`
+  - Added `1_run_dpnet.sh` split workflow summary
+  - Added `run_ml_*` usage and output path summary
+  - Added note for upcoming results-analysis script
+- Added `notebooks/results_plots.ipynb` for visualizing `resutls/*/*.csv`.
+- Removed `resutls/` ignore rule so results can be tracked in git.

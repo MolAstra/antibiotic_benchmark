@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "antibiotic-benchmark"
+version = "0.0.1"
+description = "Simple benchmarking package for antibiotic prediction tasks"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "antibiotic_benchmark contributors" }
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["antibio_bench*"]
+

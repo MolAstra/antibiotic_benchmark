@@ -1,0 +1,9 @@
+# Dataset files are provided externally and should not be tracked.
+datasets/*
+!datasets/.gitkeep
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/

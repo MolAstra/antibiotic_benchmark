@@ -26,3 +26,6 @@
   - Prepares `datasets/datasets/Acinetobacter/raw/Acinetobacter.csv`
   - Binarizes MIC `value` by cutoff (default `32`, resistant-positive)
   - Validates `task_meta.json` and calls `dpnet process ... --root_dir ...`
+- Added and tracked `0_data_preparation.ipynb` in repository.
+- Updated README data preparation section to use notebook workflow.
+- Added `resutls/` to `.gitignore` as local model output directory.

@@ -32,12 +32,17 @@ pip install -e .
 # git submodule update --init --recursive
 ```
 
-## Data Preparaion and Standarzation
+## Data Preparation and Standardization
 
 ```bash
-python 0_data_preparation.py
+# open notebook
+jupyter lab 0_data_preparation.ipynb
 
+# optional: run notebook headless
+# jupyter nbconvert --to notebook --execute 0_data_preparation.ipynb --output 0_data_preparation.executed.ipynb
 ```
+
+`0_data_preparation.ipynb` prepares and standardizes the input table, then exports genus-level datasets used by downstream DPNet split and modeling scripts.
 
 ## Data Spliting
 
